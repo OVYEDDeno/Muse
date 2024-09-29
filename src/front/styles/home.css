@@ -1,7 +1,102 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* Home.css
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #06002e;
+  }
+  
+  .halo-animation {
+    animation: spin 10s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  button:hover {
+    cursor: pointer;
+  } */
+  
+  /* Add other custom styles here */
+  /* Home.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #06002e;
+    color: #e3e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 68vh;
+    width: 100%;
+  }
+  
+  .selena-title {
+    font-size: 3rem;
+    letter-spacing: .25em;
+    font-weight: 300;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    color: #e3e3e3;
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .find-your {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #e3e3e3;
+  }
+  
+  .muse {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #e3e3e3;
+  }
+  
+  .enter-button {
+    background-color: transparent;
+    border: 2px solid #e3e3e3;
+    color: #e3e3e3;
+    padding: 10px 30px;
+    font-size: 4rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .enter-button:hover {
+    background-color: #e3e3e3;
+    color: #171b22;
+  }
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+  .right-image {
+    width: 4rem;
+    height: auto;
+    object-fit: cover;
+  } 
+  
