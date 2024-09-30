@@ -19,21 +19,17 @@ body, html {
   width: 100%;
 } */
 
-.input-group {
-  margin-bottom: 1.5rem;
-  width: 300px; /* Set a width for input fields */
-}
 
 .input-label {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  /* margin-bottom: 0.5rem; */
   color: #e3e3e3;
    display: block; /* Make label a block element */
 }
 
 .input-field {
   width: 100%;
-  padding: 10px;
+  padding: 21px 90px;
   font-size: 1rem;
   border-radius: 51px;
   background-color: #ffffff;
@@ -42,6 +38,6 @@ body, html {
 
 
 .input-field:focus {
-  outline: none;
+  outline: 2px;
   border-color: #B0A8C6; /* Change border color on focus */
 }
