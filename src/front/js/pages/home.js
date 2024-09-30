@@ -8,7 +8,6 @@ export const Home = () => {
     <div className="container">
       <h1 className="selena-title">S E L E N A</h1>
 
-      <div className="center-content">
         <h2 className="find-your">FIND YOUR</h2>
         <h2 className="muse">MUSE</h2>
 
@@ -22,7 +21,6 @@ export const Home = () => {
               />
             </button>
           </Link>
-      </div>
     </div>
 
   );

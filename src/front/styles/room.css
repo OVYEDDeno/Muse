@@ -8,7 +8,7 @@
   color: #e3e3e3;}
    */
 .background-video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .welcome-message {
-  position: absolute;
+  position: fixed;
   top: 5%;
   left: 1%;  /* Align to the far left */
   transform: translateY(-50%); /* Adjust for vertical centering */
@@ -26,9 +26,15 @@
   color: white;
   font-family: "Belleza", sans-serif;
 }
-
+.leftOffCanvasHolder {
+  position: fixed;
+  top: 10%;
+  left: 1%;  /* Align to the far left */
+  font-size: 2rem;
+  font-family: "Belleza", sans-serif;
+}
 .leave-button {
-  position: absolute;
+  position: fixed;
   top: 5%; /* Align to the center vertically */
   right: 1%; /* Align to the far right */
   transform: translateY(-50%); /* Adjust for vertical centering */
@@ -46,4 +52,79 @@
 .leave-button:hover {
   background-color: #d32f2f;
   border: 2px solid #d32f2f;;
+}
+
+.rightOffCanvasHolder {
+  position: fixed;
+  top: 10%;
+  right: 1%;  /* Align to the far left */
+  font-size: 2rem;
+  font-family: "Belleza", sans-serif;
+}
+.current {
+  position: fixed; /* Use fixed positioning */
+  bottom: 10%; /* Adjust from bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset to center */
+  font-size: 2rem;
+  font-family: "Belleza", sans-serif;
+  color: #e3e3e3;
+}
+
+.muses {
+  position: fixed; /* Use fixed positioning */
+  bottom: 5%; /* Adjust from bottom, slightly above .current */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset to center */
+  font-size: 2rem;
+  font-family: "Belleza", sans-serif;
+  color: #e3e3e3;
+}
+
+.close {
+  width: 34px; /* Set the width of the icon */
+  height: 34px; /* Set the height of the icon */
+  position: absolute; /* Position it absolutely within its parent */
+  top: 10px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.close:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.close:active {
+  transform: scale(0.9); /* Shrink when clicked for a pressed effect */
+}
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.offcanvas-header, .offcanvas-body{
+  background-color: #06002e;
+  color: white;
+}
+
+.vote-icons {
+  align-items: center;         /* Center icons vertically */
+}
+
+.vote-icons img {
+  width: 80px;                 /* Set a fixed width for both icons */
+  height: 80px;                /* Set a fixed height for both icons */
+  margin: 0 34px;              /* Add horizontal spacing between icons */
+  cursor: pointer;             /* Change cursor on hover */
+  transition: transform 0.2s; /* Smooth scaling effect on hover */
+}
+
+.vote-icons img:hover {
+  transform: scale(3);       /* Scale up icon on hover */
 }
