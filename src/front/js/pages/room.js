@@ -19,14 +19,14 @@ export const Room = () => {
   return (
     <>
       <div className="holder">
-        <video className="background-video" autoPlay muted loop>
+        {/* <video className="background-video" autoPlay muted loop>
          <source
             src="https://video.wixstatic.com/video/3fd3c0_c16ac619f8724148939045c3a97ab2ce/480p/mp4/file.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
-        {/* <div className="video-background">
+        </video> */}
+        <div className="video-background">
           <iframe
             className="background-video"
             width="100%"
@@ -36,7 +36,7 @@ export const Room = () => {
             allow=" autoplay; picture-in-picture;"
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
-        </div> */}
+        </div>
         <h1 className="welcome-message">Welcome, ExampleUser1!</h1>
         <h1 className="current">Current Muse</h1>
         <h1 className="muses">The Weeknd, Playboi Carti - Timeless </h1>
