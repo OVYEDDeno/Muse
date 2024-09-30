@@ -20,12 +20,23 @@ export const Room = () => {
     <>
       <div className="holder">
         <video className="background-video" autoPlay muted loop>
-          <source
+         <source
             src="https://video.wixstatic.com/video/3fd3c0_c16ac619f8724148939045c3a97ab2ce/480p/mp4/file.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
+        {/* <div className="video-background">
+          <iframe
+            className="background-video"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/16jA-6hiSUo?si=IgqcrUzilLItNgAU"
+            frameborder="0"
+            allow=" autoplay; picture-in-picture;"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div> */}
         <h1 className="welcome-message">Welcome, ExampleUser1!</h1>
         <h1 className="current">Current Muse</h1>
         <h1 className="muses">The Weeknd, Playboi Carti - Timeless </h1>
@@ -72,8 +83,9 @@ export const Room = () => {
             </div>
             <div className="list-group gap-3 text-center">
               <h5>
-                If you don't like the upcoming muse, you can up or down vote it or add your own muse!
-              </h5>          
+                If you don't like the upcoming muse, you can up or down vote it
+                or add your own muse!
+              </h5>
               <button
                 className="btn btn-danger"
                 type="button"
