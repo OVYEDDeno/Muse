@@ -21,7 +21,7 @@ body, html {
 
 
 .input-label {
-  font-size: 2rem;
+  font-size: 2.1rem;
   /* margin-bottom: 0.5rem; */
   color: #e3e3e3;
    display: block; /* Make label a block element */
@@ -38,6 +38,5 @@ body, html {
 
 
 .input-field:focus {
-  outline: 2px;
-  border-color: #B0A8C6; /* Change border color on focus */
+  outline: 8px solid #e3e3e3;
 }
