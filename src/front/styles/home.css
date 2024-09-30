@@ -1,11 +1,5 @@
 /* Home.css
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #06002e;
-  }
-  
+ 
   .halo-animation {
     animation: spin 10s linear infinite;
   }
@@ -18,24 +12,23 @@ body, html {
       transform: rotate(360deg);
     }
   }
-  
-  button:hover {
-    cursor: pointer;
-  } */
-  
-  /* Add other custom styles here */
   /* Home.css */
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Helvetica', sans-serif;
+    font-family: "Belleza", sans-serif;
     background-color: #06002e;
     color: #e3e3e3;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
+  /* .belleza-regular {
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
   
   .container {
     display: flex;
@@ -51,8 +44,8 @@ body, html {
     font-size: 3rem;
     letter-spacing: .25em;
     font-weight: 300;
-    margin-top: 2rem;
-    margin-bottom: 8rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     color: #e3e3e3;
   }
   
@@ -64,14 +57,14 @@ body, html {
   }
   
   .find-your {
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #e3e3e3;
   }
   
   .muse {
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: #e3e3e3;
@@ -82,7 +75,7 @@ body, html {
     border: 2px solid #e3e3e3;
     color: #e3e3e3;
     padding: 10px 30px;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
@@ -91,7 +84,7 @@ body, html {
   
   .enter-button:hover {
     background-color: #e3e3e3;
-    color: #171b22;
+    color: #06002e;
   }
 
   .right-image {

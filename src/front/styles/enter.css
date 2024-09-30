@@ -1,0 +1,47 @@
+/* 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #06002e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+} */
+
+.input-group {
+  margin-bottom: 1.5rem;
+  width: 300px; /* Set a width for input fields */
+}
+
+.input-label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #e3e3e3;
+   display: block; /* Make label a block element */
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 51px;
+  background-color: #ffffff;
+  color: #131313;
+}
+
+
+.input-field:focus {
+  outline: none;
+  border-color: #B0A8C6; /* Change border color on focus */
+}
