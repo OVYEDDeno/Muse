@@ -168,7 +168,7 @@ export const Personal = () => {
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
         >
-          300 Rooms
+          2 Room(s)
         </button>
 
         <div
