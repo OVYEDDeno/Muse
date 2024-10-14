@@ -26,6 +26,14 @@
   color: white;
   font-family: "Belleza", sans-serif;
 }
+
+.welcome-message:hover {
+  background-color: #333333;
+  /* border: 2px solid #d32f2f;; */
+  padding: 2px;
+  box-shadow: 0px 0px 68px #e3e3e3;
+}
+
 .leftOffCanvasHolder {
   position: fixed;
   top: 10%;
@@ -43,13 +51,55 @@
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  border-radius: 5px;
+  border-radius: 51px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "Belleza", sans-serif;
 }
 
 .leave-button:hover {
+  background-color: #d32f2f;
+  border: 2px solid #d32f2f;;
+}
+
+.dapaint-button {
+  position: fixed;
+  bottom: 5%; /* Align to the center vertically */
+  left: 1%; /* Align to the far right */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Belleza", sans-serif;
+}
+
+.dapaint-button:hover {
+  background-color: #d32f2f;
+  border: 2px solid #d32f2f;;
+}
+
+.ebay-button {
+  position: fixed;
+  bottom: 5%; /* Align to the center vertically */
+  right: 1%; /* Align to the far right */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Belleza", sans-serif;
+}
+
+.ebay-button:hover {
   background-color: #d32f2f;
   border: 2px solid #d32f2f;;
 }
@@ -98,6 +148,44 @@
 .close:active {
   transform: scale(0.9); /* Shrink when clicked for a pressed effect */
 }
+.create-button {
+  /* position: fixed; */
+  /* top: 5%; /* Align to the center vertically
+  right: 1%; Align to the far right */
+  margin-top: 10px;
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Belleza", sans-serif;
+}
+
+.create-button:hover {
+  background-color: #d32f2f;
+  border: 2px solid #d32f2f;;
+}
+
+.search-input {
+  width: 100%; /* Make the input as wide as its container */
+  margin-top: 11px;
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Belleza", sans-serif;
+}
+
+
 .social-icons {
   display: flex;
   justify-content: space-around;

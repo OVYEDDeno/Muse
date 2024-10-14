@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-export const Room = () => {
+export const Personal = () => {
   // Use an array to manage multiple collapsible sections
   const [isOpen, setIsOpen] = useState([false, false]); // Add more false values for additional sections
 
@@ -26,7 +26,7 @@ export const Room = () => {
           />
           Your browser does not support the video tag.
         </video> */}
-        <div className="video-background">
+        {/* <div className="video-background">
           <iframe
             className="background-video"
             width="100%"
@@ -36,19 +36,19 @@ export const Room = () => {
             allow=" autoplay; picture-in-picture;"
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
-        </div>
+        </div> */}
         <h1 className="welcome-message">Welcome, ExampleUser1!</h1>
         <h1 className="current">Current Muse</h1>
         <h1 className="muses">The Weeknd, Playboi Carti - Timeless </h1>
         <Link to="/">
-          <button className="leave-button">Quietly Leave</button>
+          <button className="leave-button">+Upload</button>
         </Link>
         <Link to="/">
           <button className="dapaint-button">DaPaint</button>
         </Link>
         <Link to="/">
           <button className="ebay-button">eBay</button>
-        </Link>        
+        </Link>
       </div>
 
       {/* Left Offcanvas Holder */}
@@ -60,7 +60,7 @@ export const Room = () => {
           data-bs-target="#staticBackdrop"
           aria-controls="staticBackdrop"
         >
-          QUEUE
+          Your Muses
         </button>
 
         <div
@@ -72,8 +72,8 @@ export const Room = () => {
         >
           <div className="offcanvas-header">
             <h1 className="offcanvas-title" id="staticBackdropLabel">
-              QUEUE
-              <h5 className="offcanvas-title">ROOM PIN: 5134</h5>
+              Your Muses
+              {/* <h5 className="offcanvas-title">ROOM PIN: 5134</h5> */}
             </h1>
             <img
               data-bs-dismiss="offcanvas"
@@ -83,15 +83,15 @@ export const Room = () => {
             />
           </div>
           <div className="offcanvas-body">
-            <div className="d-flex justify-content-center mb-3">
+            {/* <div className="d-flex justify-content-center mb-3">
               <button className="btn btn-success me-2">Save Muse</button>
               <button className="btn btn-info">Add Muse</button>
-            </div>
+            </div> */}
             <div className="list-group gap-3 text-center">
-              <h5>
+              {/* <h5>
                 If you don't like the upcoming muse, you can up or down vote it
                 or add your own muse!
-              </h5>
+              </h5> */}
               <button
                 className="btn btn-danger"
                 type="button"
@@ -99,7 +99,7 @@ export const Room = () => {
                 aria-expanded={isOpen[1]}
                 aria-controls="uniqueCollapseId"
               >
-                OVYED - OVYED Deno
+                Rewards
               </button>
               <div
                 className="collapse"
@@ -126,24 +126,32 @@ export const Room = () => {
                 aria-expanded={isOpen[1]}
                 aria-controls="museCollapseId"
               >
-                Lil Top - NBA YoungBoy
+                Saved Muses
               </button>
               <div
                 className="collapse"
                 id="museCollapseId"
                 style={{ display: isOpen[2] ? "block" : "none" }} // Use isOpen[1]
               >
-                <div className="vote-icons">
-                  <img
-                    src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Red-Triangle-3d-icon.png"
-                    alt="up-icon"
-                    className="up-icon"
-                  />
-                  <img
-                    src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Red-Triangle-Pointed-Down-3d-icon.png"
-                    alt="down-icon"
-                    className="down-icon"
-                  />
+                <div className="Saved-Muses">
+                  <Link to="/room">
+                    <button
+                      className="btn btn-info"
+                      type="button"
+                      style={{ width: "100%" }}
+                    >
+                      Turn Up!!! from Nostalgia
+                    </button>
+                  </Link>
+                  <Link to="/room">
+                    <button
+                      className="btn btn-info"
+                      type="button"
+                      style={{ width: "100%" }}
+                    >
+                      Muse_name from Room_name
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -160,7 +168,7 @@ export const Room = () => {
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
         >
-          2 PEOPLE
+          300 Rooms
         </button>
 
         <div
@@ -172,8 +180,8 @@ export const Room = () => {
         >
           <div className="offcanvas-header">
             <h1 className="offcanvas-title" id="offcanvasRightLabel">
-              ROOM NAME
-              <h5 className="offcanvas-title">ROOM PIN: 5134</h5>
+              ROOMS AVAILABLE
+              {/* <h5 className="offcanvas-title">ROOM PIN: 5134</h5> */}
             </h1>
             <img
               data-bs-dismiss="offcanvas"
@@ -183,14 +191,42 @@ export const Room = () => {
             />
           </div>
           <div className="offcanvas-body">
-            <div className="list-group gap-3 text-center">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-input"
+            />
+            <Link to="/">
+              <button className="create-button">Create A Room</button>
+            </Link>
+
+            <div className="list-group gap-2 text-center">
               {/* guest Collapsible Section */}
-              <button
+              <Link to="/room">
+                <button
+                  className="btn btn-danger"
+                  type="button"
+                  style={{ width: "100%" }}
+                >
+                  Glamorus - 21
+                </button>
+              </Link>
+
+              <Link to="/room">
+                <button
+                  className="btn btn-danger"
+                  type="button"
+                  style={{ width: "100%" }}
+                >
+                  Nostalgia - 2
+                </button>
+              </Link>
+              {/*<button
                 className="btn btn-danger"
                 type="button"
                 onClick={() => toggleCollapse(0)} // Pass index 0
               >
-                ExampleUser1
+                Nostalgia - 2
               </button>
               <div
                 className="collapse"
@@ -200,7 +236,7 @@ export const Room = () => {
                   <button className="btn btn-primary">Make An Account</button>
                 </div>
               </div>
-              {/* Second Collapsible Section */}
+              {/* Second Collapsible Section *
               <button
                 className="btn btn-danger"
                 type="button"
@@ -267,7 +303,7 @@ export const Room = () => {
                     className="icon"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="d-flex justify-content-center mb-3 mt-3">
               <button className="btn btn-success me-2">DaPaint</button>
