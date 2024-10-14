@@ -115,6 +115,8 @@ export const Shop = () => {
           <option value="lowest">Price: Lowest to Highest</option> */}
         </select>
       </div>
+        <input type="text" placeholder="Search..." className="search-input1 text-center"/>
+
       <div className="product-grid">
         {sortedProducts.map((product) => (
           <div key={product.id} className="product-card">
