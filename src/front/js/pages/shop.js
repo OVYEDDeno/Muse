@@ -8,9 +8,11 @@ export const Shop = () => {
   const [products, setProducts] = useState([]);
   const [sortOption, setSortOption] = useState("highest");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showBidModal, setShowBidModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false);
+  const [maxBid, setMaxBid] = useState("");
 
   useEffect(() => {
-    // Example products data (replace with an API call or actual product data)
     setProducts([
         {
           id: 1,
@@ -111,7 +113,6 @@ export const Shop = () => {
           endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
           description: "This is a detailed description of Product 9. It includes all the necessary information about the product's features, benefits, and specifications."
         } 
-      // ... (other products with similar properties)
     ]);
   }, []);
 
@@ -196,9 +197,83 @@ export const Shop = () => {
           </div>
           <div className="modal-footer">
             <div className="button-container">
-              <button className="action-button">Bid</button>
+              <button className="action-button" onClick={(e) => {
+                e.stopPropagation();
+                setShowBidModal(true);
+              }}>Bid</button>
               <button className="action-button">+ Cart</button>
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const BidModal = ({ onClose }) => {
+    return (
+      <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2>How much do you want to bid?</h2>
+            <button className="close-button" onClick={onClose}>&times;</button>
+          </div>
+          <div className="modal-body">
+            <p>We will automatically bid $1 until we reach your max bid below</p>
+            <input 
+              type="number" 
+              value={maxBid} 
+              onChange={(e) => setMaxBid(e.target.value)}
+              placeholder="Enter your max bid"
+              className="bid-input"
+            />
+          </div>
+          <div className="modal-footer">
+            <button className="action-button" onClick={() => {
+              console.log("Max bid submitted:", maxBid);
+              setMaxBid("");
+              onClose();
+            }}>Submit</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const AdvancedFilterModal = ({ onClose }) => {
+    return (
+      <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2>Advanced Filter Search</h2>
+            <button className="close-button" onClick={onClose}>&times;</button>
+          </div>
+          <div className="modal-body">
+            <div className="filter-option">
+              <label>Price Range:</label>
+              <input type="number" placeholder="Min" className="filter-input" />
+              <input type="number" placeholder="Max" className="filter-input" />
+            </div>
+            <div className="filter-option">
+              <label>Category:</label>
+              <select className="filter-select">
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Home & Garden</option>
+              </select>
+            </div>
+            <div className="filter-option">
+              <label>Rating:</label>
+              <select className="filter-select">
+                <option>All</option>
+                <option>4+ Stars</option>
+                <option>3+ Stars</option>
+                <option>2+ Stars</option>
+              </select>
+            </div>
+          </div>
+          <div className="modal-footer">
+            <button className="action-button" onClick={onClose}>Apply Filters</button>
           </div>
         </div>
       </div>
@@ -222,9 +297,8 @@ export const Shop = () => {
         >
           <option value="highest">Price: Highest to Lowest</option>
           <option value="lowest">Price: Lowest to Highest</option>
-          {/* ... (other sorting options) */}
         </select>
-        <button className="advanced-filter-btn">Advanced Filter Search</button>
+        <button className="advanced-filter-btn" onClick={() => setShowFilterModal(true)}>Advanced Filter Search</button>
         <Link to="/">
           <button className="advanced-filter-btn">Sell</button>
         </Link>
@@ -253,7 +327,10 @@ export const Shop = () => {
             </p>
             <CountdownTimer endTime={product.endTime} />
             <div className="button-container">
-              <button className="action-button">Bid</button>
+              <button className="action-button" onClick={(e) => {
+                e.stopPropagation();
+                setShowBidModal(true);
+              }}>Bid</button>
               <button className="action-button">+ Cart</button>
             </div>
           </div>
@@ -265,6 +342,8 @@ export const Shop = () => {
           onClose={() => setSelectedProduct(null)}
         />
       )}
+      {showBidModal && <BidModal onClose={() => setShowBidModal(false)} />}
+      {showFilterModal && <AdvancedFilterModal onClose={() => setShowFilterModal(false)} />}
     </div>
   );
 };
