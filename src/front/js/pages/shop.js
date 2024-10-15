@@ -6,86 +6,211 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [sortOption, setSortOption] = useState("highest"); // State for sort option
+  const [sortOption, setSortOption] = useState("highest");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     // Example products data (replace with an API call or actual product data)
     setProducts([
-      {
-        id: 1,
-        name: "Product 1",
-        price: 30,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 2,
-        name: "Product 2",
-        price: 20,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 3,
-        name: "Product 3",
-        price: 10,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 4,
-        name: "Product 4",
-        price: 40,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 5,
-        name: "Product 5",
-        price: 25,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 6,
-        name: "Product 6",
-        price: 15,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 7,
-        name: "Product 7",
-        price: 35,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 8,
-        name: "Product 8",
-        price: 5,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
-      {
-        id: 9,
-        name: "Product 9",
-        price: 50,
-        imageUrl: "https://via.placeholder.com/300x200",
-      },
+        {
+          id: 1,
+          name: "Product 1",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // 3 days from now
+          description: "This is a detailed description of Product 1. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 2,
+          name: "Product 2",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 2. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 3,
+          name: "Product 3",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 3. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 4,
+          name: "Product 4",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 4. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 5,
+          name: "Product 5",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 5. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 6,
+          name: "Product 6",
+          price: 30,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 6. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 7,
+          name: "Product 7",
+          price: 60,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 7. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 8,
+          name: "Product 8",
+          price: 50,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 8. It includes all the necessary information about the product's features, benefits, and specifications."
+        },
+        {
+          id: 9,
+          name: "Product 9",
+          price: 40,
+          imageUrl: "https://cdnb.artstation.com/p/assets/images/images/011/331/877/large/alexandre-grynagier-ima10-beecopter-des03-validmarvel-by-mrprops-d724zaj.jpg?1529020192",
+          rating: 4.6,
+          ratingCount: 107210,
+          boughtLastMonth: 40000,
+          endTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+          description: "This is a detailed description of Product 9. It includes all the necessary information about the product's features, benefits, and specifications."
+        } 
+      // ... (other products with similar properties)
     ]);
   }, []);
 
-  // Function to handle sorting
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
   };
 
-  // Sort products based on the selected option
   const sortedProducts = [...products].sort((a, b) => {
     if (sortOption === "highest") {
-      return b.price - a.price; // Sort by highest price
+      return b.price - a.price;
     } else if (sortOption === "lowest") {
-      return a.price - b.price; // Sort by lowest price
+      return a.price - b.price;
     }
-    return 0; // No sorting
+    return 0;
   });
+
+  const formatNumber = (num) => {
+    return num >= 1000 ? `${(num / 1000).toFixed(1)}K` : num;
+  };
+
+  const CountdownTimer = ({ endTime }) => {
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(endTime));
+
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setTimeLeft(calculateTimeLeft(endTime));
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }, [endTime]);
+
+    function calculateTimeLeft(endTime) {
+      const difference = +new Date(endTime) - +new Date();
+      let timeLeft = {};
+
+      if (difference > 0) {
+        timeLeft = {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        };
+      }
+
+      return timeLeft;
+    }
+
+    const addLeadingZero = (num) => {
+      return num < 10 ? `0${num}` : num;
+    };
+
+    return (
+      <div className="countdown-timer">
+        Ends in: {addLeadingZero(timeLeft.days)}:{addLeadingZero(timeLeft.hours)}:
+        {addLeadingZero(timeLeft.minutes)}:{addLeadingZero(timeLeft.seconds)}
+      </div>
+    );
+  };
+
+  const ProductModal = ({ product, onClose }) => {
+    if (!product) return null;
+  
+    return (
+      <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2>{product.name}</h2>
+            <button className="close-button" onClick={onClose}>&times;</button>
+          </div>
+          <div className="modal-body">
+            <img src={product.imageUrl} alt={product.name} className="modal-image" />
+            <p className="modal-price">${product.price}</p>
+            <div className="modal-rating">
+              <span className="stars">{product.rating} ★★★★☆</span>
+              <span className="rating-count">({formatNumber(product.ratingCount)} ratings)</span>
+            </div>
+            <p className="modal-bought">{formatNumber(product.boughtLastMonth)}+ bought in past month</p>
+            <div className="modal-countdown">
+              <CountdownTimer endTime={product.endTime} />
+            </div>
+            <p className="modal-description">{product.description}</p>
+          </div>
+          <div className="modal-footer">
+            <div className="button-container">
+              <button className="action-button">Bid</button>
+              <button className="action-button">+ Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="shop-container">
-      {/* <h1 className="welcome-message">Welcome, ExampleUser1!</h1> */}
+      <div className="search-container">
+        <input type="text" placeholder="Search..." className="search-input" />
+      </div>
+      <h1>ANY PRODUCT, ANY SERVICE AT THE HIGHEST VALUE GUARANTEE!!!</h1>
       <div className="filter-container">
         <label htmlFor="sort-options" className="filter-label">
           Sort By:
@@ -94,54 +219,52 @@ export const Shop = () => {
           id="sort-options"
           value={sortOption}
           onChange={handleSortChange}
-          className="form-select"
         >
-          {/* Price Drops, Selling, Auctioning, Mileage, Ending, Value, Rated */}
           <option value="highest">Price: Highest to Lowest</option>
           <option value="lowest">Price: Lowest to Highest</option>
-          <option value="highest">Price Drops: Highest to Lowest</option>
-          <option value="lowest">Price Drops: Lowest to Highest</option>
-          <option value="highest">Best Selling: Highest to Lowest</option>
-          <option value="lowest">Best Selling: Lowest to Highest</option>
-          <option value="highest">Auctioning: Highest to Lowest</option>
-          <option value="lowest">Auctioning: Lowest to Highest</option>
-          <option value="highest">Value: Highest to Lowest</option>
-          <option value="lowest">Value: Lowest to Highest</option>
-          <option value="highest">Rated: Highest to Lowest</option>
-          <option value="lowest">Rated: Lowest to Highest</option>
-          {/* <option value="highest">Price: Highest to Lowest</option>
-          <option value="lowest">Price: Lowest to Highest</option>
-          <option value="highest">Price: Highest to Lowest</option>
-          <option value="lowest">Price: Lowest to Highest</option> */}
+          {/* ... (other sorting options) */}
         </select>
+        <button className="advanced-filter-btn">Advanced Filter Search</button>
+        <Link to="/">
+          <button className="advanced-filter-btn">Sell</button>
+        </Link>
+        <Link to="/">
+          <button className="cart-btn">Request</button>
+        </Link>
+        <button className="cart-btn">Cart</button>
       </div>
-        <input type="text" placeholder="Search..." className="search-input1 text-center"/>
 
       <div className="product-grid">
         {sortedProducts.map((product) => (
-          <div key={product.id} className="product-card">
+          <div key={product.id} className="product-card" onClick={() => setSelectedProduct(product)}>
             <img
               src={product.imageUrl}
               alt={product.name}
               className="product-image"
             />
             <h2 className="product-name">{product.name}</h2>
-            <p className="product-price">${product.price}</p>{" "}
-            {/* Display price */}
+            <p className="product-price">${product.price}</p>
+            <div className="product-rating">
+              <span className="stars">{product.rating} ★★★★☆</span>
+              <span className="rating-count">({formatNumber(product.ratingCount)})</span>
+            </div>
+            <p className="product-bought">
+              {formatNumber(product.boughtLastMonth)}+ bought in past month
+            </p>
+            <CountdownTimer endTime={product.endTime} />
+            <div className="button-container">
+              <button className="action-button">Bid</button>
+              <button className="action-button">+ Cart</button>
+            </div>
           </div>
         ))}
       </div>
-      <div className="button-container">
-        <Link to="/">
-          <button className="action-button">+Upload</button>
-        </Link>
-        <Link to="/">
-          <button className="action-button">DaPaint</button>
-        </Link>
-        <Link to="/">
-          <button className="action-button">eBay</button>
-        </Link>
-      </div>
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 };

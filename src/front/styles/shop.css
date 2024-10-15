@@ -5,83 +5,166 @@ body, html {
   font-family: "Belleza", sans-serif;
   background-color: #06002e;
   color: #e3e3e3;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Background Video */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
+.shop-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Search Container */
+.search-container {
+  /* padding: 21px; */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px #0000001a;
+}
+
+.search-input {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #e3e3e3;
+  background-color: transparent;
+  color: #e3e3e3;
+  border-radius: 25px;
 }
 
-/* Welcome Message */
-.welcome-message {
-  position: fixed;
-  top: 5%;
-  left: 1%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: white;
+/* Filter Container */
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.welcome-message:hover {
-  background-color: #333333;
-  padding: 2px;
-  box-shadow: 0px 0px 68px #e3e3e3;
+.filter-label {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+#sort-options {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: 2px solid #e3e3e3;
+  background-color: transparent;
+  color: #e3e3e3;
+  border-radius: 25px;
+}
+
+.advanced-filter-btn, .cart-btn {
+  padding: 8px 15px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.advanced-filter-btn {
+  background-color: #007bff;
+}
+
+.advanced-filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.cart-btn {
+  background-color: #4CAF50;
+}
+
+.cart-btn:hover {
+  background-color: #45a049;
 }
 
 /* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100vw; /* Use viewport width to fill the entire width */
-  margin: 100px 0 0; /* Remove auto margin to eliminate side gaps */
-  padding: 0; /* Ensure no padding is applied */
-  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .product-card {
-  background-color: #fff;
+  background-color: #080040;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 .product-image {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .product-name {
-  margin-top: 10px;
-  font-size: 1.2em;
-  color: #333;
+  font-size: 2em;
 }
 
-/* Button Container */
-.button-container {
-  margin-top: 20px;
+.product-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.product-rating {
   display: flex;
-  gap: 10px;
+  align-items: center;
   justify-content: center;
+  gap: 5px;
+}
+
+.stars {
+  color: #FFD700;
+}
+
+.rating-count {
+  font-size: 0.9em;
+  color: #a0a0a0;
+}
+
+.product-bought {
+  font-size: 0.9em;
+  color: #4CAF50;
+  margin-bottom: 5px;
+}
+
+.countdown-timer {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #FF4500;
+  margin-bottom: 10px;
 }
 
 /* Action Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 .action-button {
   padding: 10px 20px;
+  font-size: 1rem;
   background-color: #007bff;
-  border: none;
   color: #fff;
-  border-radius: 5px;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 1em;
   transition: background-color 0.3s;
 }
 
@@ -89,157 +172,83 @@ body, html {
   background-color: #0056b3;
 }
 
-/* Off Canvas Elements */
-.leftOffCanvasHolder, .rightOffCanvasHolder {
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  #sort-options, .advanced-filter-btn, .cart-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+.modal-overlay {
   position: fixed;
-  top: 10%;
-  font-size: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #06002e34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.leftOffCanvasHolder {
-  left: 1%;
+.modal-content {
+  background-color: #06002e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.rightOffCanvasHolder {
-  right: 1%;
-}
-
-/* Leave Button */
-.leave-button {
-  position: fixed;
-  top: 5%;
-  right: 1%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  border-radius: 51px;
+.close-button {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 2.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.leave-button:hover {
-  background-color: #d32f2f;
-  border: 2px solid #d32f2f;
+.modal-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 5px;
 }
 
-/* Other Button Styles */
-.dapaint-button, .ebay-button, .create-button {
+.modal-price {
   font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  border-radius: 51px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  color: #007bff;
 }
 
-.dapaint-button {
-  position: fixed;
-  bottom: 5%;
-  left: 1%;
-  transform: translateY(-50%);
+.modal-rating, .modal-bought, .modal-countdown {
+  margin-bottom: 1px;
 }
 
-.ebay-button {
-  position: fixed;
-  bottom: 5%;
-  right: 1%;
-  transform: translateY(-50%);
-}
-
-.create-button {
+.modal-description {
   margin-top: 10px;
 }
 
-.dapaint-button:hover, .ebay-button:hover, .create-button:hover {
-  background-color: #d32f2f;
-  border: 2px solid #d32f2f;
-}
-
-/* Current and Muses Elements */
-.current, .muses {
-  position: fixed;
-  font-size: 2rem;
-  color: #e3e3e3;
-}
-
-.current {
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.muses {
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Close Icon */
-.close {
-  width: 34px;
-  height: 34px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.close:hover {
-  transform: scale(1.1);
-}
-
-.close:active {
-  transform: scale(0.9);
-}
-
-/* Search Input */
-.search-input {
-  width: 100%;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  border-radius: 51px;
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-}
-
-/* Vote Icons */
-.vote-icons {
-  align-items: center;
-}
-
-.vote-icons img {
-  width: 80px;
-  height: 80px;
-  margin: 0 34px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.vote-icons img:hover {
-  transform: scale(3);
-}
-
-/* Offcanvas Header and Body */
-.offcanvas-header, .offcanvas-body {
-  background-color: #06002e;
-  color: white;
+.modal-footer {
+  margin-top: 20px;
+  margin: auto;
 }
